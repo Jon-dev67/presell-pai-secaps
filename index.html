@@ -3,26 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secaps Black | Emagrecimento Saudável - Termogênico Natural</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Secaps Black | Transforme Seu Corpo em 30 Dias - Suplemento Natural</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17789912214"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17789912214');
+    </script>
+    
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17789912214/EIGoCN2Xns4bEJaJ8qJC',
+          'transaction_id': '',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+
     <style>
         :root {
-            --primary-color: #0a8c7f; /* Verde-azulado escuro */
-            --primary-dark: #07695e;
-            --primary-light: #0db8a6;
-            --accent-color: #1a1a1a; /* Preto */
-            --accent-light: #333333;
-            --secondary-color: #2ecc71; /* Verde vivo para destaques */
-            --text-color: #333333;
-            --text-light: #666666;
-            --light-bg: #f0f9f7;
-            --border-color: #d1ece8;
-            --white: #ffffff;
-            --shadow: 0 4px 12px rgba(10, 140, 127, 0.1);
-            --shadow-hover: 0 8px 20px rgba(10, 140, 127, 0.2);
-            --promo-color: #e74c3c;
+            --primary-color: #0DAF8B;
+            --primary-dark: #0A8C6F;
+            --primary-light: #2ECC9A;
+            --accent-color: #FF6B35;
+            --accent-dark: #E5562B;
+            --secondary-color: #3498DB;
+            --text-color: #2C3E50;
+            --text-light: #7F8C8D;
+            --light-bg: #F8F9FA;
+            --white: #FFFFFF;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --shadow-hover: 0 15px 40px rgba(0,0,0,0.15);
+            --border-radius: 16px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
         
         * {
@@ -33,733 +59,2351 @@
         
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--white);
             color: var(--text-color);
             line-height: 1.6;
-            background: linear-gradient(135deg, #f8fdfc 0%, #f0f9f7 50%, #f8fdfc 100%);
-            min-height: 100vh;
+            background-color: var(--white);
+            overflow-x: hidden;
         }
         
         .container {
-            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
         
-        .header {
+        /* Header/Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(13, 175, 139, 0.1) 0%, rgba(255, 107, 53, 0.05) 100%);
+            padding: 40px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+        
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
             text-align: center;
-            padding: 30px 0 20px;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(13, 175, 139, 0.2);
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: var(--transition);
+        }
+        
+        .hero-image img:hover {
+            transform: perspective(1000px) rotateY(0deg);
         }
         
         .logo {
-            font-size: 2.8rem;
-            font-weight: 800;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: var(--text-color);
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--accent-color);
-            margin-bottom: 10px;
+            letter-spacing: 1px;
         }
         
         .logo span {
             color: var(--primary-color);
+            position: relative;
         }
         
-        .product-subtitle {
-            font-size: 1.2rem;
-            font-weight: 400;
-            color: var(--text-light);
+        .logo span::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: rgba(13, 175, 139, 0.2);
+            z-index: -1;
+        }
+        
+        .hero-tagline {
+            font-size: 2.2rem;
+            font-weight: 800;
             margin-bottom: 20px;
+            color: var(--text-color);
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--text-light);
+        }
+        
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .hero-badge {
+            background: linear-gradient(45deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 5px 15px rgba(13, 175, 139, 0.3);
+        }
+        
+        .hero-badge i {
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--accent-color), var(--accent-dark));
+            color: white;
+            text-align: center;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 107, 53, 0.4);
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        /* Pain Section */
+        .pain-section {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--text-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 60px;
+            color: var(--text-light);
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
         
-        .products-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-top: 30px;
-            justify-content: center;
+        .pain-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
         }
         
-        .product-card {
-            flex: 1;
-            min-width: 320px;
-            max-width: 500px;
+        .pain-point {
             background-color: var(--white);
-            border-radius: 16px;
-            padding: 0 0 30px 0;
+            padding: 30px;
+            border-radius: var(--border-radius);
             box-shadow: var(--shadow);
-            border: 1px solid var(--border-color);
-            text-align: center;
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-        
-        .product-image-container {
-            width: 100%;
-            height: 280px;
-            overflow: hidden;
-            background-color: #f8fdfc;
+            transition: var(--transition);
             display: flex;
             align-items: center;
-            justify-content: center;
-            padding: 20px;
-            border-bottom: 3px solid var(--primary-color);
-        }
-        
-        .product-image {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            transition: transform 0.5s ease;
-        }
-        
-        .product-card:hover .product-image {
-            transform: scale(1.05);
-        }
-        
-        .product-content {
-            padding: 25px;
-        }
-        
-        .product-type {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .product-name {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--accent-color);
-            margin-bottom: 15px;
-        }
-        
-        .product-description {
-            font-size: 1rem;
-            margin-bottom: 25px;
-            color: var(--text-light);
-            line-height: 1.5;
-            min-height: 72px;
-        }
-        
-        .promo-badge {
-            background: linear-gradient(to right, var(--promo-color), #ff6b6b);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            display: inline-block;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .price-container {
-            margin: 20px 0;
-            padding: 20px 0;
-            border-top: 1px dashed var(--border-color);
-            border-bottom: 1px dashed var(--border-color);
-        }
-        
-        .price-original {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            text-decoration: line-through;
-            margin-bottom: 5px;
-        }
-        
-        .price-discount {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--promo-color);
-            margin: 10px 0;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .price-installment {
-            font-size: 1.1rem;
-            color: var(--text-color);
-            margin-top: 10px;
-            font-weight: 500;
-        }
-        
-        .discount-percent {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-left: 10px;
-            vertical-align: middle;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: linear-gradient(to right, var(--primary-color), var(--primary-dark));
-            color: var(--white);
-            padding: 16px 40px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 15px rgba(10, 140, 127, 0.4);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 20px 0 15px;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-        }
-        
-        .btn:hover {
-            background: linear-gradient(to right, var(--primary-dark), var(--accent-color));
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(10, 140, 127, 0.5);
-        }
-        
-        .shipping-note {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin-top: 10px;
-            font-style: italic;
-        }
-        
-        .benefits-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
-            margin: 60px 0 40px;
+            border: 2px solid transparent;
         }
         
-        .benefit-card {
-            background-color: var(--white);
-            border-radius: 12px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-        
-        .benefit-card:hover {
-            transform: translateY(-5px);
+        .pain-point:hover {
+            transform: translateY(-10px);
             box-shadow: var(--shadow-hover);
             border-color: var(--primary-color);
         }
         
-        .benefit-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
+        .pain-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 15px;
+            overflow: hidden;
+            flex-shrink: 0;
         }
         
-        .benefit-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--accent-color);
+        .pain-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .pain-point:hover .pain-image img {
+            transform: scale(1.1);
+        }
+        
+        .pain-content {
+            flex: 1;
+        }
+        
+        .pain-text {
+            font-size: 1.3rem;
+            font-weight: 700;
             margin-bottom: 10px;
+            color: var(--text-color);
         }
         
-        .benefit-description {
+        .pain-description {
             color: var(--text-light);
             font-size: 0.95rem;
         }
         
-        .ingredients {
-            background-color: var(--light-bg);
-            border-radius: 15px;
-            padding: 40px 30px;
-            margin: 40px 0;
-        }
-        
-        .section-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--accent-color);
-            margin-bottom: 30px;
+        .empathy-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 50px;
+            border-radius: var(--border-radius);
             text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: var(--shadow);
             position: relative;
-            padding-bottom: 15px;
+            overflow: hidden;
         }
         
-        .section-title::after {
-            content: "";
+        .empathy-box::before {
+            content: '';
             position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary-color);
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+            z-index: 1;
+        }
+        
+        .empathy-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .empathy-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .empathy-subtext {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Solution Section */
+        .solution-section {
+            padding: 100px 0;
+            background-color: var(--light-bg);
+        }
+        
+        .solution-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+        
+        .solution-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .solution-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            color: var(--text-color);
+        }
+        
+        .solution-title span {
+            color: var(--primary-color);
+            position: relative;
+        }
+        
+        .solution-title span::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: rgba(13, 175, 139, 0.2);
+            z-index: -1;
+        }
+        
+        .solution-description {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        .benefit-list {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+        
+        .benefit-list li {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: flex-start;
+            padding: 15px;
+            background-color: rgba(13, 175, 139, 0.05);
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+        
+        .benefit-list li:hover {
+            background-color: rgba(13, 175, 139, 0.1);
+            transform: translateX(10px);
+        }
+        
+        .benefit-list i {
+            color: var(--primary-color);
+            margin-right: 15px;
+            margin-top: 3px;
+            font-size: 1.3rem;
+            background-color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .product-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .product-item {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .product-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .product-item:hover .product-image img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 25px;
+        }
+        
+        .product-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+        
+        .product-type {
+            display: inline-block;
+            background-color: rgba(13, 175, 139, 0.1);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Formula Section */
+        .formula-section {
+            padding: 100px 0;
+            background-color: var(--white);
         }
         
         .ingredients-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
         
         .ingredient-card {
             background-color: var(--white);
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
+            border-radius: var(--border-radius);
+            overflow: hidden;
             box-shadow: var(--shadow);
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
         
         .ingredient-card:hover {
-            border-color: var(--primary-color);
-            transform: translateY(-3px);
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .ingredient-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .ingredient-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .ingredient-card:hover .ingredient-image img {
+            transform: scale(1.1);
+        }
+        
+        .ingredient-content {
+            padding: 25px;
         }
         
         .ingredient-name {
-            font-weight: 600;
-            color: var(--primary-color);
+            font-size: 1.4rem;
+            font-weight: 700;
             margin-bottom: 10px;
-            font-size: 1.1rem;
+            color: var(--text-color);
         }
         
         .ingredient-description {
             color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* Social Proof Section */
+        .proof-section {
+            padding: 100px 0;
+            background-color: var(--light-bg);
+        }
+        
+        .proof-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            align-items: flex-start;
+        }
+        
+        .testimonials {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+      /* ==================== VÍDEOS COMPLETOS SEM CORTE ==================== */
+.video-testimonials-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, rgba(13, 175, 139, 0.05) 0%, rgba(255, 107, 53, 0.02) 100%);
+}
+
+.video-testimonials-section .section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.video-testimonials-section .section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Container dos vídeos - lado a lado */
+.videos-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+/* Cada vídeo individual - TAMANHO FIXO */
+.video-card {
+    width: 450px; /* LARGURA FIXA */
+    max-width: 100%;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    transition: all 0.4s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.18);
+}
+
+/* Badge no vídeo */
+.video-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: linear-gradient(45deg, #FF6B35, #E5562B);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+}
+
+/* Container do vídeo - TAMANHO FIXO PARA MP4 */
+.video-wrapper {
+    width: 100%;
+    height: 253px; /* ALTURA FIXA para 450x253 (16:9) */
+    background: #000;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* O elemento de vídeo - SEM CORTE */
+.video-player {
+    width: 100%;
+    height: auto; /* Mantém proporção */
+    max-height: 100%;
+    display: block;
+    cursor: pointer;
+    background: #000;
+}
+
+/* Se o vídeo for vertical (shorts) */
+.video-player.vertical {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+}
+
+/* Informações abaixo do vídeo */
+.video-info {
+    padding: 25px;
+    background: white;
+}
+
+.video-info h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.video-info p {
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.video-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.video-stats span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.video-stats i {
+    color: var(--primary-color);
+}
+
+/* Badge de resultados */
+.results-badge-v2 {
+    background: linear-gradient(135deg, #0DAF8B, #0A8C6F);
+    color: white;
+    padding: 25px 50px;
+    border-radius: 60px;
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    margin: 40px auto;
+    font-weight: 800;
+    font-size: 1.3rem;
+    box-shadow: 0 15px 35px rgba(13, 175, 139, 0.25);
+    max-width: 800px;
+    text-align: center;
+}
+
+.results-badge-v2 i {
+    font-size: 2rem;
+    background: white;
+    color: var(--primary-color);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .videos-container {
+        gap: 30px;
+    }
+    
+    .video-card {
+        width: 400px;
+    }
+    
+    .video-wrapper {
+        height: 225px; /* 400x225 */
+    }
+}
+
+@media (max-width: 768px) {
+    .videos-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .video-card {
+        width: 100%;
+        max-width: 450px;
+    }
+    
+    .video-wrapper {
+        height: 253px; /* 450x253 */
+    }
+    
+    .video-info {
+        padding: 20px;
+    }
+    
+    .video-info h3 {
+        font-size: 1.3rem;
+    }
+    
+    .results-badge-v2 {
+        padding: 20px 30px;
+        font-size: 1.1rem;
+        margin: 30px 20px;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .results-badge-v2 i {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-card {
+        width: 100%;
+    }
+    
+    .video-wrapper {
+        height: 200px; /* Menor em mobile */
+    }
+}
+
+/* Efeito de carregamento */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.video-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+        /* Badge de estatística */
+        .results-badge {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 20px 35px;
+            border-radius: 60px;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            margin: 40px auto;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 30px rgba(13, 175, 139, 0.3);
+            text-align: center;
+        }
+
+        .results-badge i {
+            font-size: 1.8rem;
+            background: white;
+            color: var(--primary-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Navegação do carrossel */
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 20px;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .swiper-button-next:hover:after,
+        .swiper-button-prev:hover:after {
+            color: white;
+        }
+
+        /* Paginação */
+        .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background: #ddd;
+            opacity: 1;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--primary-color);
+            transform: scale(1.3);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .video-local-card {
+                max-width: 320px;
+            }
+            
+            .video-info {
+                padding: 20px;
+            }
+            
+            .video-info h4 {
+                font-size: 1.2rem;
+            }
+            
+            .play-pause-btn {
+                width: 70px;
+                height: 70px;
+                font-size: 24px;
+            }
+            
+            .results-badge {
+                padding: 15px 25px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .video-local-card {
+                max-width: 280px;
+            }
+            
+            .video-container {
+                padding-bottom: 60%; /* Mais alto em mobile */
+            }
+            
+            .video-info h4 {
+                font-size: 1.1rem;
+            }
+            
+            .video-info p {
+                font-size: 0.9rem;
+            }
+            
+            .swiper-button-next,
+            .swiper-button-prev {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .swiper-button-next:after,
+            .swiper-button-prev:after {
+                font-size: 16px;
+            }
+        }
+
+        /* Animação sutil para os vídeos */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .video-local-card {
+            animation: slideUp 0.6s ease forwards;
+        }
+
+        .video-local-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        /* Badge de estatística */
+        .results-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 30px auto;
+            font-weight: 600;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .results-badge i {
+            font-size: 20px;
+        }
+
+       
+        
+        .testimonial-card {
+    width: 300px; /* Largura padrão */
+    height: 200px; /* Altura padrão */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 10px;
+    display: inline-block; /* Para ficarem em linha */
+}
+
+.testimonial-image {
+    width: 100%;
+    height: 100%;
+}
+
+.testimonial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Para a imagem preencher o card sem distorcer */
+}
+
+/* Container para os 3 cards */
+.testimonials-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: var(--text-light);
             font-size: 0.9rem;
         }
         
-        .guarantee-section {
+        .results-badge {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #333;
+            padding: 20px 40px;
+            border-radius: var(--border-radius);
+            font-weight: 800;
+            font-size: 1.3rem;
+            text-align: center;
+            max-width: 700px;
+            margin: 60px auto 0;
+            box-shadow: 0 10px 30px rgba(255, 165, 0, 0.2);
             display: flex;
+            align-items: center;
             justify-content: center;
             gap: 20px;
-            margin: 40px 0;
             flex-wrap: wrap;
         }
         
-        .guarantee-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        /* Security Badges */
+        .security-section {
+            padding: 60px 0;
             background-color: var(--white);
-            padding: 15px 25px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border-color);
-        }
-        
-        .guarantee-icon {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-        }
-        
-        .footer {
-            margin-top: 60px;
-            padding: 30px 0;
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-            color: var(--text-light);
-            background-color: var(--light-bg);
-            border-radius: 15px 15px 0 0;
         }
         
         .security-badges {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin: 25px 0;
             flex-wrap: wrap;
+            gap: 30px;
         }
         
-        .badge {
-            background-color: var(--white);
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 0.85rem;
-            color: var(--text-color);
-            border: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        .security-badge {
+            background-color: var(--light-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            min-width: 200px;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+        
+        .security-badge:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
         }
         
         .badge-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .badge-icon img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
+        .badge-title {
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 5px;
+        }
+        
+        /* Offer Section */
+        .offer-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(13, 175, 139, 0.05) 0%, rgba(255, 107, 53, 0.02) 100%);
+        }
+        
+        .offer-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--text-color);
+        }
+        
+        .offer-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 60px;
+            color: var(--text-light);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .urgency-banner {
+            background: linear-gradient(45deg, var(--accent-color), var(--accent-dark));
+            color: white;
+            padding: 20px 40px;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin-bottom: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+        
+        .urgency-banner i {
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        .packages-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        
+        .package-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 70px rgba(0,0,0,0.15);
+        }
+        
+        .package-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 40px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            transform: rotate(45deg);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+        
+        .package-badge.best-seller {
+            background-color: #FFD700;
+            color: #333;
+        }
+        
+        .package-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 35px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .package-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.3;
+            z-index: 1;
+        }
+        
+        .package-header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .package-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .package-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .package-body {
+            padding: 40px 30px;
+        }
+        
+        .package-product {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .product-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 15px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .product-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .product-details h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+        
+        .product-details p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        
+        .package-price {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+        
+        .old-price {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            text-decoration: line-through;
+            margin-bottom: 5px;
+        }
+        
+        .new-price {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        
+        .installment {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+        
+        .bonus-list {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+        
+        .bonus-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            font-size: 1rem;
+        }
+        
+        .bonus-list i {
             color: var(--primary-color);
-            font-weight: bold;
+            margin-right: 12px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        
+        .btn-package {
+            display: block;
+            width: 100%;
+            background: linear-gradient(45deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 25px rgba(13, 175, 139, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-package:hover {
+            background: linear-gradient(45deg, var(--primary-dark), var(--primary-color));
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(13, 175, 139, 0.4);
+        }
+        
+        .shipping-info {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .shipping-info i {
+            color: var(--primary-color);
+        }
+        
+        /* Footer */
+        .footer-section {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 80px 0 40px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .footer-description {
+            opacity: 0.8;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links h3, .footer-contact h3 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: var(--primary-light);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+        
+        .contact-info {
+            list-style: none;
+        }
+        
+        .contact-info li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-info i {
+            color: var(--primary-color);
+            margin-right: 15px;
+            width: 20px;
+            margin-top: 5px;
+        }
+        
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+        
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .payment-method {
+            background-color: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .copyright {
+            opacity: 0.7;
+            font-size: 0.9rem;
+            margin-top: 20px;
         }
         
         .disclaimer {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 0.75rem;
-            opacity: 0.8;
-            margin-top: 20px;
-            line-height: 1.4;
+            max-width: 900px;
+            margin: 40px auto 0;
+            font-size: 0.8rem;
+            opacity: 0.6;
+            text-align: center;
+            line-height: 1.6;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .proof-section {
+        padding: 60px 0;
+        background-color: #fff;
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #2c3e50;
+        margin-bottom: 15px;
+    }
+    
+    .section-subtitle {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #7f8c8d;
+        margin-bottom: 40px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .proof-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+    
+    .testimonials {
+        flex: 1;
+        min-width: 300px;
+    }
+    
+    .video-testimonials {
+        flex: 1;
+        min-width: 300px;
+    }
+    
+    .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    
+    .testimonial-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease;
+        height: 300px;
+    }
+    
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .testimonial-image {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .testimonial-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    /* Estilos para o carousel de vídeos */
+    .video-carousel {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+    
+    .swiper {
+        width: 100%;
+        height: 400px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    
+    .swiper-slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 15px;
+    }
+    
+    .video-wrapper {
+        width: 100%;
+        height: 300px;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 15px;
+    }
+    
+    .video-wrapper iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    
+    .video-description {
+        text-align: center;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-top: 10px;
+    }
+    
+    .swiper-pagination {
+        position: relative;
+        margin-top: 15px;
+    }
+    
+    .swiper-button-next, .swiper-button-prev {
+        color: #3498db;
+    }
+    
+    .results-badge {
+        display: inline-flex;
+        align-items: center;
+        background: linear-gradient(135deg, #3498db, #2ecc71);
+        color: white;
+        padding: 15px 25px;
+        border-radius: 50px;
+        font-weight: 600;
+        margin: 30px auto 0;
+        box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+    }
+    
+    .results-badge i {
+        font-size: 1.5rem;
+        margin-right: 15px;
+    }
+    
+    /* Responsividade */
+    @media (max-width: 992px) {
+        .proof-container {
+            flex-direction: column;
+        }
+        
+        .testimonial-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .section-title {
+            font-size: 2rem;
+        }
+        
+        .testimonial-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .testimonial-card {
+            height: 250px;
+        }
+        
+        .swiper {
+            height: 350px;
+        }
+        
+        .video-wrapper {
+            height: 250px;
+        }
+    }
+
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-tagline {
+                font-size: 1.9rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
         }
         
         @media (max-width: 768px) {
-            .products-container {
+            .header-content {
                 flex-direction: column;
-                align-items: center;
+                text-align: center;
             }
             
-            .product-card {
+            .hero-text, .hero-image {
                 width: 100%;
-                max-width: 100%;
+            }
+            
+            .hero-image img {
+                transform: none;
+            }
+            
+            .hero-image img:hover {
+                transform: none;
             }
             
             .logo {
+                font-size: 2.5rem;
+            }
+            
+            .hero-tagline {
+                font-size: 1.7rem;
+            }
+            
+            .section-title {
                 font-size: 2.2rem;
             }
             
-            .product-name {
-                font-size: 1.5rem;
+            .pain-points {
+                grid-template-columns: 1fr;
             }
             
-            .price-discount {
-                font-size: 2rem;
+            .proof-container {
+                flex-direction: column;
             }
             
-            .btn {
-                padding: 14px 30px;
-                font-size: 1rem;
+            .urgency-banner {
+                font-size: 1.1rem;
+                padding: 15px 20px;
             }
             
-            .product-image-container {
-                height: 240px;
+            .package-card {
+                max-width: 450px;
+                margin: 0 auto;
+            }
+            
+            .new-price {
+                font-size: 2.5rem;
             }
         }
         
         @media (max-width: 480px) {
             .container {
-                padding: 15px;
+                padding: 0 15px;
+            }
+            
+            .hero-section {
+                padding: 30px 0 40px;
             }
             
             .logo {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
-            .product-content {
-                padding: 20px 15px;
+            .hero-tagline {
+                font-size: 1.5rem;
             }
             
-            .benefits-container {
-                grid-template-columns: 1fr;
+            .section-title {
+                font-size: 1.9rem;
             }
             
-            .product-image-container {
-                height: 220px;
+            .hero-badge {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+            
+            .btn {
+                padding: 16px 30px;
+                font-size: 1.1rem;
+            }
+            
+            .package-body {
+                padding: 30px 20px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Cabeçalho -->
-        <header class="header">
-            <h1 class="logo">Secaps <span>Black</span></h1>
-            <p class="product-subtitle">
-                Suplemento alimentar 100% natural para emagrecimento saudável, queima de gordura, 
-                eliminação de toxinas e aumento da energia
-            </p>
-        </header>
-        
-        <!-- Produtos -->
-        <div class="products-container">
-            <!-- Secaps Black Chá -->
-            <div class="product-card">
-                <div class="product-image-container">
-                    <img src="secaps cha.jpg" alt="Secaps Black Chá - Suplemento Emagrecedor em Pó" class="product-image">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="header-content">
+                <div class="hero-text">
+                    <h1 class="logo">Secaps <span>Black</span></h1>
+                    <h2 class="hero-tagline">Você está a uma dose de distância da sua transformação</h2>
+                    <p class="hero-subtitle">Suplemento alimentar 100% natural que age 10x mais rápido que qualquer outro, promovendo emagrecimento saudável, queima de gordura visceral e energia renovada</p>
+                    
+                    <div class="hero-badges">
+                        <div class="hero-badge"><i class="fas fa-bolt"></i> Resultados em 30 Dias</div>
+                        <div class="hero-badge"><i class="fas fa-seedling"></i> 100% Natural</div>
+                        <div class="hero-badge"><i class="fas fa-shield-alt"></i> Garantia de 90 Dias</div>
+                    </div>
+                    
+                    <a href="#offer" class="btn">
+                        <i class="fas fa-shopping-cart"></i> Quero o meu já!
+                    </a>
                 </div>
                 
-                <div class="product-content">
-                    <div class="product-type">Em Pó</div>
-                    <h2 class="product-name">Secaps Black Chá</h2>
-                    <p class="product-description">
-                        Suplemento alimentar em pó 100% natural que auxilia no emagrecimento saudável, 
-                        eliminação de toxinas, funcionamento intestinal e aumento da energia.
-                    </p>
-                    
-                    <div class="promo-badge">20% de Desconto</div>
-                    
-                    <div class="price-container">
-                        <div class="price-original">De: R$ 209,90</div>
-                        <div class="price-discount">R$ 167,92</div>
-                        <div class="price-installment">
-                            ou 12x de R$ 20,38 <span class="discount-percent">20% OFF</span>
-                        </div>
-                    </div>
-                    
-                    <a href="https://pay.hest.com.br/65aee9ce-147d-45ea-bb87-31bcb71b413e" class="btn">
-                        <i class="fas fa-shopping-cart"></i> Comprar Secaps Black Chá
-                    </a>
-                    
-                    <p class="shipping-note">*Frete calculado no checkout</p>
-                    
-                    <div style="margin-top: 15px; font-size: 0.9rem; color: var(--text-light);">
-                        <p><i class="fas fa-check" style="color: var(--primary-color);"></i> <strong>Garantia de 30 dias</strong></p>
-                        <p><i class="fas fa-check" style="color: var(--primary-color);"></i> <strong>Entrega para todo Brasil</strong></p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Secaps Black Cápsulas -->
-            <div class="product-card">
-                <div class="product-image-container">
-                    <img src="secaps capsula.jpg" alt="Secaps Black Cápsulas - Termogênico Emagrecedor" class="product-image">
-                </div>
-                
-                <div class="product-content">
-                    <div class="product-type">Cápsulas</div>
-                    <h2 class="product-name">Secaps Black</h2>
-                    <p class="product-description">
-                        Suplemento termogênico e emagrecedor em cápsulas para queima de gordura, 
-                        aceleração do metabolismo, controle do apetite e aumento da energia.
-                    </p>
-                    
-                    <div class="promo-badge">10% de Desconto</div>
-                    
-                    <div class="price-container">
-                        <div class="price-original">De: R$ 197,00</div>
-                        <div class="price-discount">R$ 177,30</div>
-                        <div class="price-installment">
-                            ou 12x de R$ 21,33 <span class="discount-percent">10% OFF</span>
-                        </div>
-                    </div>
-                    
-                    <a href="https://pay.hest.com.br/786f4a06-0468-49ef-be38-53db08110141" class="btn">
-                        <i class="fas fa-shopping-cart"></i> Comprar Secaps Black Cápsulas
-                    </a>
-                    
-                    <p class="shipping-note">*Frete calculado no checkout</p>
-                    
-                    <div style="margin-top: 15px; font-size: 0.9rem; color: var(--text-light);">
-                        <p><i class="fas fa-check" style="color: var(--primary-color);"></i> <strong>Garantia de 30 dias</strong></p>
-                        <p><i class="fas fa-check" style="color: var(--primary-color);"></i> <strong>Entrega para todo Brasil</strong></p>
-                    </div>
+                <div class="hero-image">
+                    <img src="https://s2-valor.glbimg.com/rdYtKeCO_ZJU2xb7_v7qD-cHTR8=/0x0:968x538/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2025/7/f/dBTSgaQtimalti9RA3eA/publicador-api-valor-pressworks-100-42c603cd-9c16-4dcc-a884-3a3035589755-20251119124014.png" alt="Secaps Black - Produto Premium">
                 </div>
             </div>
         </div>
-        
-        <!-- Benefícios -->
-        <div class="benefits-container">
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <i class="fas fa-fire"></i>
+    </section>
+    
+    <!-- Pain Section -->
+    <section class="pain-section">
+        <div class="container">
+            <h2 class="section-title">Você se identifica com algum desses problemas?</h2>
+            <p class="section-subtitle">Muitas pessoas enfrentam essas dificuldades diariamente. Você não está sozinho(a)!</p>
+            
+            <div class="pain-points">
+                <div class="pain-point">
+                    <div class="pain-image">
+                        <img src="data:image/jpeg;base64,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" alt="Falta de energia">
+                    </div>
+                    <div class="pain-content">
+                        <h3 class="pain-text">Falta de energia e cansaço constante</h3>
+                        <p class="pain-description">Acorda cansado(a) e passa o dia sem disposição para nada</p>
+                    </div>
                 </div>
-                <h3 class="benefit-title">Queima de Gordura</h3>
-                <p class="benefit-description">
-                    Promove a queima de gordura localizada através da termogênese, utilizando a gordura acumulada como fonte de energia.
-                </p>
+                
+                <div class="pain-point">
+                    <div class="pain-image">
+                        <img src="data:image/jpeg;base64,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" alt="Autoestima baixa">
+                    </div>
+                    <div class="pain-content">
+                        <h3 class="pain-text">Autoestima baixa por conta do peso</h3>
+                        <p class="pain-description">Evita espelhos, fotos e situações sociais por insegurança</p>
+                    </div>
+                </div>
+                
+                <div class="pain-point">
+                    <div class="pain-image">
+                        <img src="data:image/jpeg;base64,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" alt="Compulsão por doces">
+                    </div>
+                    <div class="pain-content">
+                        <h3 class="pain-text">Vontade incontrolável de comer doces</h3>
+                        <p class="pain-description">Sente compulsão por açúcar mesmo depois de comer</p>
+                    </div>
+                </div>
+                
+                <div class="pain-point">
+                    <div class="pain-image">
+                        <img src="data:image/jpeg;base64,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" alt="Retenção de líquidos">
+                    </div>
+                    <div class="pain-content">
+                        <h3 class="pain-text">Inchaço e retenção de líquidos</h3>
+                        <p class="pain-description">Acorda inchado(a) e sente as roupas mais apertadas ao longo do dia</p>
+                    </div>
+                </div>
             </div>
             
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <i class="fas fa-bolt"></i>
+            <div class="empathy-box">
+                <div class="empathy-content">
+                    <p class="empathy-text">Nós sabemos exatamente o que você está sentindo...</p>
+                    <p class="empathy-subtext">E você não está sozinho(a)! Milhares de pessoas passaram pelos mesmos problemas até descobrirem a solução que você está prestes a conhecer. A transformação é possível!</p>
                 </div>
-                <h3 class="benefit-title">Acelera o Metabolismo</h3>
-                <p class="benefit-description">
-                    Aumenta o gasto calórico do organismo, ajudando a acelerar o metabolismo e potencializar a perda de peso.
-                </p>
-            </div>
-            
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <i class="fas fa-apple-alt"></i>
-                </div>
-                <h3 class="benefit-title">Controla o Apetite</h3>
-                <p class="benefit-description">
-                    Promove sensação de saciedade, reduzindo a fome e ajudando no controle da compulsão alimentar.
-                </p>
-            </div>
-            
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <i class="fas fa-tint"></i>
-                </div>
-                <h3 class="benefit-title">Elimina Toxinas</h3>
-                <p class="benefit-description">
-                    Possui efeito diurético, ajudando na eliminação de toxinas e no combate à retenção de líquidos.
-                </p>
-            </div>
-            
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <i class="fas fa-heartbeat"></i>
-                </div>
-                <h3 class="benefit-title">Mais Energia</h3>
-                <p class="benefit-description">
-                    A cafeína natural e L-Carnitina proporcionam mais energia e disposição para atividades físicas.
-                </p>
-            </div>
-            
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <h3 class="benefit-title">Redução de Medidas</h3>
-                <p class="benefit-description">
-                    O uso contínuo pode levar à diminuição de medidas, especialmente em áreas como abdômen, pernas e braços.
-                </p>
             </div>
         </div>
-        
-        <!-- Ingredientes -->
-        <div class="ingredients">
-            <h3 class="section-title">Ingredientes 100% Naturais</h3>
+    </section>
+    
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <h2 class="section-title">A solução definitiva para emagrecimento saudável</h2>
+            
+            <div class="solution-container">
+                <div class="solution-content">
+                    <h2 class="solution-title">O que é o <span>Secaps Black</span>?</h2>
+                    <p class="solution-description">O Secaps Black é um suplemento 100% natural desenvolvido por especialistas em nutrição que combina os benefícios do chá em pó e das cápsulas para oferecer resultados 10x mais rápidos que métodos convencionais.</p>
+                    
+                    <ul class="benefit-list">
+                        <li><i class="fas fa-fire"></i> <strong>Acelera o metabolismo</strong> e promove queima de gordura visceral</li>
+                        <li><i class="fas fa-apple-alt"></i> <strong>Controla o apetite</strong> e reduz a compulsão por doces</li>
+                        <li><i class="fas fa-tint"></i> <strong>Elimina toxinas</strong> e combate a retenção de líquidos</li>
+                        <li><i class="fas fa-bolt"></i> <strong>Mais energia e disposição</strong> para o dia a dia e treinos</li>
+                        <li><i class="fas fa-heartbeat"></i> <strong>Melhora o trânsito intestinal</strong> e promove sensação de saciedade</li>
+                    </ul>
+                    
+                    <a href="#offer" class="btn">
+                        <i class="fas fa-shopping-cart"></i> Quero transformar meu corpo
+                    </a>
+                </div>
+                
+                <div class="solution-image">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_774923-MLB96103066808_102025-O.webp" alt="Fórmula Secaps Black">
+                </div>
+            </div>
+            
+    </section>
+    
+    <!-- Formula Section -->
+    <section class="formula-section">
+        <div class="container">
+            <h2 class="section-title">Fórmula 100% Natural e Poderosa</h2>
+            <p class="section-subtitle">Ingredientes selecionados com propriedades cientificamente comprovadas</p>
             
             <div class="ingredients-grid">
                 <div class="ingredient-card">
-                    <h4 class="ingredient-name">Psyllium</h4>
-                    <p class="ingredient-description">
-                        Fonte de fibras que promove saciedade, melhora a digestão e o funcionamento intestinal.
-                    </p>
+                    <div class="ingredient-image">
+                        <img src="https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2025/05/psyllium.jpg?w=1200&h=900&crop=1" alt="Psyllium">
+                    </div>
+                    <div class="ingredient-content">
+                        <h3 class="ingredient-name">Psyllium</h3>
+                        <p class="ingredient-description">Fonte de fibras que promove saciedade, melhora a digestão e o funcionamento intestinal.</p>
+                    </div>
                 </div>
                 
                 <div class="ingredient-card">
-                    <h4 class="ingredient-name">Hibisco</h4>
-                    <p class="ingredient-description">
-                        Poderoso diurético que auxilia na eliminação de toxinas e combate a retenção de líquidos.
-                    </p>
+                    <div class="ingredient-image">
+                        <img src="https://cdn.correiodoestado.com.br/img/c/920/615/dn_arquivo/NoticiaMidia/374302/1593997581047.jpg" alt="Hibisco">
+                    </div>
+                    <div class="ingredient-content">
+                        <h3 class="ingredient-name">Hibisco</h3>
+                        <p class="ingredient-description">Poderoso diurético que auxilia na eliminação de toxinas e combate a retenção de líquidos.</p>
+                    </div>
                 </div>
                 
                 <div class="ingredient-card">
-                    <h4 class="ingredient-name">Cúrcuma</h4>
-                    <p class="ingredient-description">
-                        Anti-inflamatório natural que auxilia na queima de gordura e aceleração do metabolismo.
-                    </p>
-                </div>
-                
-                <div class="ingredient-card">
-                    <h4 class="ingredient-name">Cromo</h4>
-                    <p class="ingredient-description">
-                        Regula os níveis de açúcar no sangue, reduzindo o apetite e a compulsão por doces.
-                    </p>
-                </div>
-                
-                <div class="ingredient-card">
-                    <h4 class="ingredient-name">Café Verde</h4>
-                    <p class="ingredient-description">
-                        Termogênico natural que acelera o metabolismo e aumenta a queima de gordura.
-                    </p>
-                </div>
-                
-                <div class="ingredient-card">
-                    <h4 class="ingredient-name">L-Carnitina</h4>
-                    <p class="ingredient-description">
-                        Transporta a gordura para as mitocôndrias, onde é convertida em energia.
-                    </p>
+                    <div class="ingredient-image">
+                        <img src="https://www.correiobraziliense.com.br/cbradar/wp-content/uploads/2025/07/Curcuma-_1752107774280.jpg" alt="Cúrcuma">
+                    </div>
+                    <div class="ingredient-content">
+                        <h3 class="ingredient-name">Cúrcuma</h3>
+                        <p class="ingredient-description">Anti-inflamatório natural que auxilia na queima de gordura e aceleração do metabolismo.</p>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
+    
+   <!-- Social Proof Section -->
+<section class="proof-section">
+    <div class="container">
+        <h2 class="section-title">Resultados de algumas clientes</h2>
+        <p class="section-subtitle">Mais de 15.000 pessoas já transformaram seus corpos com o Secaps Black</p>
         
-        <!-- Garantias -->
-        <div class="guarantee-section">
-            <div class="guarantee-item">
-                <i class="fas fa-shipping-fast guarantee-icon"></i>
-                <div>
-                    <h4>Entrega para Todo Brasil</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-light);">*Frete calculado no checkout</p>
+        <div class="proof-container">
+            <!-- Testimonials Grid -->
+            <div class="testimonials">
+                <div class="testimonial-grid">
+                    <!-- Card 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="https://secapsblackstore.com/wp-content/uploads/2025/11/SECAPS-CHA-5-1024x1024.png" alt="Resultado Ana Paula">
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="https://secapsblackstore.com/wp-content/uploads/2025/11/SECAPS-CHA-12-1024x1024.png" alt="Resultado Carlos">
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="https://secapsblackstore.com/wp-content/uploads/2025/11/SECAPS-CHA-11-1024x1024.png" alt="Resultado Mariana">
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <div class="guarantee-item">
-                <i class="fas fa-shield-alt guarantee-icon"></i>
-                <div>
-                    <h4>Compra Segura</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-light);">Site protegido e criptografado</p>
+<!-- ========== SEÇÃO DE VÍDEOS (FUNCIONAL) ========== -->
+<section class="video-testimonials-section">
+    <div class="container">
+        <h2 class="section-title">Depoimentos em Vídeo</h2>
+        <p class="section-subtitle">Veja a transformação real de nossos clientes</p>
+        
+        <div class="videos-container">
+            
+            <!-- Vídeo 1 -->
+            <div class="video-card">
+                <div class="video-badge">
+                    <i class="fas fa-play-circle"></i> DEPOIMENTO REAL
+                </div>
+                
+                <div class="video-wrapper">
+                    <video 
+                        class="video-player"
+                        controls
+                        playsinline
+                        preload="metadata"
+                        poster="thumb1.jpg" 
+                    >
+                        <source src="FDownloader.Net_AQP60mv7AM5cSwy3Iw1wxwi8t9JeWKNM4ExkJrS-3LMIYtycD-NOnZGmCIP23SSQ-ItMGfUIj7UjrR_PqZIAgxX_SRJxEVuXhHaWIFKpqDk93A_720p_(HD).mp4" type="video/mp4">
+                        Seu navegador não suporta vídeos HTML5.
+                    </video>
+                </div>
+                
+                <div class="video-info">
+                    <h3>Transformação Comprovada</h3>
+                    <p>Vitube mostra resultados visíveis após 30 dias de uso contínuo. Veja a diferença antes e depois.</p>
+                    
+                    <div class="video-stats">
+                        <span><i class="fas fa-eye"></i> 2.5K visualizações</span>
+                        <span><i class="fas fa-heart"></i> 98% aprovaram</span>
+                    </div>
                 </div>
             </div>
             
-            <div class="guarantee-item">
-                <i class="fas fa-undo guarantee-icon"></i>
-                <div>
-                    <h4>Garantia de 30 Dias</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-light);">Ou seu dinheiro de volta</p>
+            <!-- Vídeo 2 -->
+            <div class="video-card">
+                <div class="video-badge">
+                    <i class="fas fa-certificate"></i> RESULTADO REAL
+                </div>
+                
+                <div class="video-wrapper">
+                    <video 
+                        class="video-player"
+                        controls
+                        playsinline
+                        preload="metadata"
+                        poster="thumb2.jpg" 
+                    >
+                        <source src="10.MP4" type="video/mp4">
+                        Seu navegador não suporta vídeos HTML5.
+                    </video>
+                </div>
+                
+                <div class="video-info">
+                    <h3>Resultado em 1 Mês</h3>
+                    <p>Depoimento emocionante de cliente satisfeita com os resultados alcançados rapidamente.</p>
+                    
+                    <div class="video-stats">
+                        <span><i class="fas fa-eye"></i> 3.2K visualizações</span>
+                        <span><i class="fas fa-heart"></i> 99% aprovaram</span>
+                    </div>
                 </div>
             </div>
+            
         </div>
         
-        <!-- Rodapé -->
-        <footer class="footer">
-            <div class="security-badges">
-                <div class="badge">
-                    <span class="badge-icon">✓</span> Compra 100% Segura
-                </div>
-                <div class="badge">
-                    <span class="badge-icon">✓</span> Garantia de 30 Dias
-                </div>
-                <div class="badge">
-                    <span class="badge-icon">✓</span> Produto Original
-                </div>
-                <div class="badge">
-                    <span class="badge-icon">✓</span> Entrega Rápida
-                </div>
+        <!-- Badge de estatística -->
+        <div style="text-align: center;">
+            <div class="results-badge-v2">
+                <i class="fas fa-chart-line"></i>
+                <span>93% dos clientes relatam resultados visíveis nas primeiras 4 semanas de uso</span>
             </div>
-            
-            <p>© 2025 Secaps Black. Todos os direitos reservados.</p>
-            
-            <p class="disclaimer">
-                *Este produto é um suplemento alimentar e não substitui uma alimentação equilibrada e hábitos de vida saudáveis. 
-                Resultados podem variar de pessoa para pessoa. Consulte sempre um profissional de saúde antes de iniciar qualquer tratamento. 
-                As informações deste site não devem ser interpretadas como aconselhamento médico. 
-                Se você tiver uma condição médica ou preocupação com a saúde, consulte um médico ou outro profissional de saúde qualificado.
-                **O valor do frete será calculado no momento da finalização da compra, de acordo com sua localidade.
-            </p>
-        </footer>
+        </div>
     </div>
+</section>
 
+
+</section>
+    <!-- Security Badges -->
+    <section class="security-section">
+        <div class="container">
+            <h2 class="section-title">Compra 100% Segura</h2>
+            <p class="section-subtitle">Seu pedido está protegido pelas melhores práticas de segurança</p>
+            
+            <div class="security-badges">
+                <div class="security-badge">
+                    <div class="badge-icon">
+                        <img src="https://thumbs.dreamstime.com/b/selo-seguro-do-web-site-de-100-18731629.jpg" alt="Site Seguro">
+                    </div>
+                    <h3 class="badge-title">Site Seguro</h3>
+                    <p>Criptografia SSL</p>
+                </div>
+                
+                <div class="security-badge">
+                    <div class="badge-icon">
+                        <img src="https://lojainsidebrasil.com.br/cdn/shop/products/Designsemnome_23.png?v=1694202674" alt="Garantia">
+                    </div>
+                    <h3 class="badge-title">Garantia de 90 Dias</h3>
+                    <p>Ou seu dinheiro de volta</p>
+                </div>
+                
+                <div class="security-badge">
+                    <div class="badge-icon">
+                        <img src="https://st4.depositphotos.com/18433260/22919/i/450/depositphotos_229199546-stock-photo-cyber-security-lock-icon-information.jpg" alt="Privacidade">
+                    </div>
+                    <h3 class="badge-title">Privacidade</h3>
+                    <p>Dados protegidos</p>
+                </div>
+                
+                <div class="security-badge">
+                    <div class="badge-icon">
+                        <img src="https://i.pinimg.com/1200x/34/15/f7/3415f74360e979cf83055f020a7da76b.jpg" alt="Entrega">
+                    </div>
+                    <h3 class="badge-title">Entrega Rápida</h3>
+                    <p>Para todo Brasil</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Offer Section -->
+    <section class="offer-section" id="offer">
+        <div class="container">
+            <h2 class="offer-title">Escolha o seu pacote e comece sua transformação</h2>
+            
+            <div class="urgency-banner">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>ÚLTIMAS UNIDADES DISPONÍVEIS!</span>
+                <span class="countdown-timer">Oferta termina em: 03h 45m 22s</span>
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            
+            <div class="packages-container">
+                <!-- Pacote 1 -->
+                <div class="package-card">
+                    <div class="package-badge">20% OFF</div>
+                    <div class="package-header">
+                        <div class="package-header-content">
+                            <h3 class="package-title">1+1 POTES</h3>
+                            <p class="package-subtitle">Experimente os resultados</p>
+                        </div>
+                    </div>
+                    <div class="package-body">
+                        <div class="package-product">
+                            <div class="product-photo">
+                                <img src="https://http2.mlstatic.com/D_909138-MLB99989395566_122025-O.jpg" alt="Secaps Black Chá">
+                            </div>
+                            <div class="product-details">
+                                <h4>Secaps Black Chá</h4>
+                                <p>Compre 1 e leve outro</p>
+                            </div>
+                        </div>
+                        
+                        <div class="package-price">
+                            <div class="old-price">De: R$ 262,38</div>
+                            <div class="new-price">R$ 209,90</div>
+                            <div class="installment">ou 12x de R$ 24,66</div>
+                        </div>
+                        
+                        <ul class="bonus-list">
+                            <li><i class="fas fa-check"></i> 1+1 Potes Secaps Black Chá (60 doses)</li>
+                     
+                        </ul>
+                        
+                        <a href="https://pay.hest.com.br/271aef23-c127-40c5-b9e1-7476b7a3ebb1" class="btn-package" onclick="gtag_report_conversion(this.href); return false;">
+                            <i class="fas fa-shopping-cart"></i> Comprar Agora
+                        </a>
+                        
+                        <p class="shipping-info"><i class="fas fa-shipping-fast"></i> Entrega em todo Brasil</p>
+                    </div>
+                </div>
+                
+                <!-- Pacote 2 (Mais Vendido) -->
+                <div class="package-card" style="border: 3px solid #FFD700;">
+                    <div class="package-badge best-seller">MAIS VENDIDO</div>
+                    <div class="package-header" style="background: linear-gradient(135deg, #FFA500, #FF8C00);">
+                        <div class="package-header-content">
+                            <h3 class="package-title">3 + 1 POTES</h3>
+                            <p class="package-subtitle">Transformação completa</p>
+                        </div>
+                    </div>
+                    <div class="package-body">
+                        <div class="package-product">
+                            <div class="product-photo">
+                                <img src="https://secapsblackstore.com/wp-content/uploads/2025/06/Design-sem-nome-16.png" alt="Secaps Black Combo">
+                            </div>
+                            <div class="product-details">
+                                <h4>Combo Secaps Black</h4>
+                                <p>3 + 1 compre 3 e leve 4</p>
+                            </div>
+                        </div>
+                        
+                        <div class="package-price">
+                            <div class="new-price">R$ 335,70</div>
+                            <div class="installment">ou 12x de R$ 34,45</div>
+                        </div>
+                        
+                        <ul class="bonus-list">
+                            <li><i class="fas fa-check"></i> 3 Potres Secaps Black Chá (90 doses)</li>
+                            <li><i class="fas fa-check"></i> 1 Pote Secaps Black chá (30 doses)</li>
+                        </ul>
+                        
+                        <a href="https://pay.hest.com.br/3a9968a8-1d95-4f2f-a916-7e53ae79a0e6" class="btn-package" onclick="gtag_report_conversion(this.href); return false;" style="background: linear-gradient(45deg, #FFA500, #FF8C00);">
+                            <i class="fas fa-crown"></i> Eu quero esse!
+                        </a>
+                        
+                        <p class="shipping-info"><i class="fas fa-shipping-fast"></i>entrega prioritária</p>
+                    </div>
+                </div>
+                
+                <!-- Pacote 3 -->
+                <div class="package-card">
+                    <div class="package-badge" style="background-color: #3498DB;">34% OFF</div>
+                    <div class="package-header" style="background: linear-gradient(135deg, #3498DB, #2980B9);">
+                        <div class="package-header-content">
+                            <h3 class="package-title">5 + 1</h3>
+                            <p class="package-subtitle">Resultados máximos</p>
+                        </div>
+                    </div>
+                    <div class="package-body">
+                        <div class="package-product">
+                            <div class="product-photo">
+                                <img src="5+1secaps cha.png" alt="Secaps Black Super Combo">
+                            </div>
+                            <div class="product-details">
+                                <h4>Super Combo</h4>
+                                <p>5 Potes de chá + 1 de brinde</p>
+                            </div>
+                        </div>
+                        
+                        <div class="package-price">
+                            <div class="old-price">De: R$ 699,67</div>
+                            <div class="new-price">R$ 461,50 </div>
+                            <div class="installment">ou 12x de R$ 47,28</div>
+                        </div>
+                        
+                        <ul class="bonus-list">
+                            <li><i class="fas fa-check"></i> 5 Potes Secaps Black Chá (150 doses)</li>
+                            <li><i class="fas fa-check"></i> 1 Potes bonus Secaps Black chá (30 doses)</li>>
+                        </ul>
+                        
+                        <a href="https://pay.hest.com.br/68659624-ac82-4f8c-af3e-d6c3501b2a41" class="btn-package" onclick="gtag_report_conversion(this.href); return false;" style="background: linear-gradient(45deg, #3498DB, #2980B9);">
+                            <i class="fas fa-gem"></i> Quero resultados máximos
+                        </a>
+                        
+                        <p class="shipping-info"><i class="fas fa-shipping-fast"></i> Frete grátis + entrega expressa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <h3 class="footer-logo">Secaps Black</h3>
+                    <p class="footer-description">Suplemento alimentar 100% natural para emagrecimento saudável e qualidade de vida. Transforme seu corpo com ingredientes naturais e comprovados.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#offer">Comprar Agora</a></li>
+                        <li><a href="#testimonials">Depoimentos</a></li>
+                        <li><a href="#formula">Ingredientes</a></li>
+                        <li><a href="#guarantee">Garantia</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> claudio@secapsblack.com</li>
+                        <li><i class="fas fa-phone"></i> (43) 9 9815-4362</li>
+                        <li><i class="fas fa-clock"></i> Seg-Dom: 24h 7dias</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Londrina , PR</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="payment-methods">
+                    <div class="payment-method"><i class="fab fa-cc-visa"></i> Visa</div>
+                    <div class="payment-method"><i class="fab fa-cc-mastercard"></i> Mastercard</div>
+                    <div class="payment-method"><i class="fab fa-cc-amex"></i> American Express</div>
+                    <div class="payment-method"><i class="fab fa-cc-paypal"></i> PayPal</div>
+                </div>
+                
+                <div class="copyright">
+                    © 2025 Secaps Black. Todos os direitos reservados.
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
     <script>
-        // Animação suave ao clicar nos botões
-        document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
+        
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#offer') {
+                        const targetElement = document.querySelector(targetId);
+                        if(targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                }
+            });
+        });
+        
+        // Countdown timer for urgency
+        function updateCountdown() {
+            const now = new Date();
+            const endOfDay = new Date();
+            endOfDay.setHours(23, 59, 59, 999);
+            
+            const diff = endOfDay - now;
+            
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            const countdownElement = document.querySelector('.countdown-timer');
+            if(countdownElement) {
+                countdownElement.textContent = `Oferta termina em: ${hours}h ${minutes}m ${seconds}s`;
+            }
+        }
+        
+        // Start countdown
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements to animate
+        document.querySelectorAll('.pain-point, .ingredient-card, .testimonial-card, .package-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+        
+        // Button click animation
+        document.querySelectorAll('.btn, .btn-package').forEach(btn => {
+            btn.addEventListener('click', function() {
                 this.style.transform = 'scale(0.95)';
                 setTimeout(() => {
                     this.style.transform = '';
                 }, 200);
             });
         });
-        
-        // Efeito de hover nas cards
-        document.querySelectorAll('.benefit-card, .ingredient-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-            });
-        });
-        
-        // Efeito de hover nas imagens dos produtos
-        document.querySelectorAll('.product-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                const img = this.querySelector('.product-image');
-                if (img) {
-                    img.style.transform = 'scale(1.05)';
-                }
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                const img = this.querySelector('.product-image');
-                if (img) {
-                    img.style.transform = 'scale(1)';
+        // ========== CONTROLE DOS VÍDEOS ==========
+document.addEventListener('DOMContentLoaded', function() {
+    const videos = document.querySelectorAll('.video-player');
+    
+    // Pausa outros vídeos quando um começa
+    videos.forEach(video => {
+        video.addEventListener('play', function() {
+            videos.forEach(otherVideo => {
+                if (otherVideo !== video && !otherVideo.paused) {
+                    otherVideo.pause();
                 }
             });
         });
+        
+        // Adiciona efeito de hover no vídeo
+        video.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.02)';
+        });
+        
+        video.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
+    
+    // Adiciona animação nos cards de vídeo
+    const videoCards = document.querySelectorAll('.video-card');
+    videoCards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.2}s`;
+    });
+});
     </script>
 </body>
 </html>
